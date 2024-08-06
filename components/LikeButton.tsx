@@ -31,11 +31,13 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
         .from("liked_songs")
         .select("*")
         .eq("user_id", user.id)
-        .eq("song_id", songId)
+        .eq("songs_id", songId)
         .single();
 
       if (!error && data) setIsLiked(true);
     };
+
+    fetchData();
   }, [songId, user?.id, supabaseClient]);
 
   const Icon = isLiked ? AiFillHeart : AiOutlineHeart;

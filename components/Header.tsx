@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
               </Button>
               <Button
                 onClick={() => router.push("/account")}
-                className="text-white"
+                className="bg-white"
               >
                 <FaUserAlt />
               </Button>

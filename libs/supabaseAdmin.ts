@@ -55,8 +55,8 @@ const createOrRetrieveCustomer = async ({ email, uuid }: { email: string, uuid: 
     const { data, error } = await supabaseAdmin.from('customers').select('stripe_customer_id').eq('id', uuid).single()
 
     if (error || !data?.stripe_customer_id) {
-        const customerData: { metaData: { supbaseUUID: string }; email?: string } = {
-            metaData: {
+        const customerData: { metadata: { supbaseUUID: string }; email?: string } = {
+            metadata: {
                 supbaseUUID: uuid
             }
         }
